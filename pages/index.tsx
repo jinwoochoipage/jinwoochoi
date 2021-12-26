@@ -1,6 +1,26 @@
-import React, { Component } from "react";
+import React from "react";
 import Router from "next/router";
+import styled from "@emotion/react";
+import Header from "../components/Header/Header";
+import HeaderLinks from "../components/Header/HeaderLinks";
 
-export default function Index() {
-  return <h1>hello</h1>;
+const dashboardRoutes = [];
+
+export default function Home({ ...rest }) {
+  return (
+    <div>
+      <Header
+        color="transparent"
+        brand="NextJS Material Kit"
+        rightLinks={<HeaderLinks />}
+        fixed
+        changeColorOnScroll={{
+          height: 400,
+          color: "white",
+        }}
+        {...rest}
+      />
+      <div>hello</div>
+    </div>
+  );
 }

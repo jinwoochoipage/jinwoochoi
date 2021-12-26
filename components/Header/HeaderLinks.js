@@ -22,11 +22,11 @@ import styles from "styles/jss/nextjs-material-kit/components/headerLinksStyle.j
 
 const useStyles = makeStyles(styles);
 
-export default function HeaderLinks(props) {
+export default function HeaderLinks() {
   const classes = useStyles();
   return (
     <List className={classes.list}>
-      <ListItem className={classes.listItem}>
+      {/* <ListItem className={classes.listItem}>
         <CustomDropdown
           noLiPadding
           navDropdown
@@ -69,60 +69,45 @@ export default function HeaderLinks(props) {
         >
           <CloudDownload className={classes.icons} /> Download
         </Button>
+      </ListItem> */}
+      <ListItem className={classes.listItem}>
+        <Button color="transparent" className={classes.navLink} href="/people">
+          PEOPLE
+        </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
-        {/*<Tooltip title="Delete">
-          <IconButton aria-label="Delete">
-            <DeleteIcon />
-          </IconButton>
-        </Tooltip>*/}
-        <Tooltip
-          id="instagram-twitter"
-          title="Follow us on twitter"
-          placement={"top"}
-          classes={{ tooltip: classes.tooltip }}
+        <Button
+          color="transparent"
+          className={classes.navLink}
+          href="/publications"
         >
-          <Button
-            href="https://twitter.com/CreativeTim?ref=creativetim"
-            target="_blank"
-            color="transparent"
-            className={classes.navLink}
-          >
-            <i className={classes.socialIcons + " fab fa-twitter"} />
-          </Button>
-        </Tooltip>
+          PUBLICATIONS
+        </Button>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Button color="transparent" className={classes.navLink} href="/courses">
+          COURSES
+        </Button>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Button color="transparent" className={classes.navLink} href="/joinus">
+          JOIN US
+        </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
         <Tooltip
-          id="instagram-facebook"
-          title="Follow us on facebook"
-          placement={"top"}
-          classes={{ tooltip: classes.tooltip }}
-        >
-          <Button
-            color="transparent"
-            href="https://www.facebook.com/CreativeTim?ref=creativetim"
-            target="_blank"
-            className={classes.navLink}
-          >
-            <i className={classes.socialIcons + " fab fa-facebook"} />
-          </Button>
-        </Tooltip>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Tooltip
-          id="instagram-tooltip"
-          title="Follow us on instagram"
+          id="github-tooltip"
+          title="visit our github"
           placement={"top"}
           classes={{ tooltip: classes.tooltip }}
         >
           <Button
             color="transparent"
-            href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
+            href="https://github.com/khuvll"
             target="_blank"
             className={classes.navLink}
           >
-            <i className={classes.socialIcons + " fab fa-instagram"} />
+            <i className={classes.socialIcons + " fab fa-github"} />
           </Button>
         </Tooltip>
       </ListItem>
