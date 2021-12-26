@@ -1,12 +1,5 @@
 import React from "react";
-// nodejs library that concatenates classes
 import classNames from "classnames";
-// @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-
-// @material-ui/icons
-
-// core components
 import Header from "components/Header/Header.js";
 import Footer from "components/Footer/Footer.js";
 import GridContainer from "components/Grid/GridContainer.js";
@@ -14,19 +7,39 @@ import GridItem from "components/Grid/GridItem.js";
 import Button from "components/CustomButtons/Button.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
 import Parallax from "components/Parallax/Parallax.js";
-
+import HomeCard from "components/home/HomeCard/HomeCard.js";
 import styles from "styles/jss/nextjs-material-kit/pages/landingPage.js";
-
-// Sections for this page
 import ProductSection from "pages-sections/LandingPage-Sections/ProductSection.js";
-import TeamSection from "pages-sections/LandingPage-Sections/TeamSection.js";
-import WorkSection from "pages-sections/LandingPage-Sections/WorkSection.js";
+import { makeStyles } from "@material-ui/core/styles";
+import styled from "@emotion/styled";
 
 const dashboardRoutes = [];
 
-const useStyles = makeStyles(styles);
+// TODO: ts-doc 형태에 맞게 주석 추가(카드 추가하는 방법)
+const histories = [
+  {
+    title: "Jul. 2021: ",
+    contents:
+      "I launched KHU Vision and Learning Reading Group with Prof. Seong Tae Kim and Prof. Gyeong-Moon Park at KHU CS.",
+  },
+  {
+    title: "Jul, 2021: ",
+    contents: "Hyogun Lee is joining our lab as an undergraduate intern!",
+  },
+  {
+    title: "Jun, 2021: ",
+    contents:
+      "Dongho Lee and Jongmin(Paul) Shin joined our lab as master students, and Gyeongho Bae joined our lab as an undergraduate intern!",
+  },
+];
+
+const HomeCardWrapper = styled.div`
+  padding-top: 20px;
+  padding-bottom: 20px;
+`;
 
 export default function LandingPage({ ...rest }) {
+  const useStyles = makeStyles(styles);
   const classes = useStyles();
   return (
     <div>
@@ -57,9 +70,16 @@ export default function LandingPage({ ...rest }) {
       </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
-          <ProductSection />
-          <TeamSection />
-          <WorkSection />
+          <HomeCardWrapper>
+            {histories.map((history, index) => (
+              <HomeCard
+                key={index}
+                title={history.title}
+                contents={history.contents}
+                style={{ width: "40rem" }}
+              />
+            ))}
+          </HomeCardWrapper>
         </div>
       </div>
       <Footer />
