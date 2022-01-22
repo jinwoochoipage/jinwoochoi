@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "components/home/HomeCard/HomeCard.js"  ],
+, "components/home/HomeCard/HomeCard.js", "pages/landing/index.js"  ],
   "exclude": [
     "node_modules"
   ]
