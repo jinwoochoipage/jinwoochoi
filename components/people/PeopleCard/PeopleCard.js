@@ -22,9 +22,23 @@ export default function PeopleCard({ people, ...rest }) {
         <h4 className={classes.cardTitle}>{people.name}</h4>
         <p>{people.role}</p>
         <PeopleImage src={people.image} />
-        <p>{people?.homepage}</p>
-        <p>{people?.email}</p>
-        <p>{people?.github}</p>
+        <PeopleInfo>
+          <PeopleIcon href={people?.homepage}>
+            <img src={require("../PeopleCard/img/homepage.svg")} />
+          </PeopleIcon>
+          <PeopleIcon href={`mailto:${people?.email}`}>
+            <img
+              className="icon"
+              src={require("../PeopleCard/img/email.svg")}
+            />
+          </PeopleIcon>
+          <PeopleIcon href={people?.github}>
+            <img
+              className="icon"
+              src={require("../PeopleCard/img/github.svg")}
+            />
+          </PeopleIcon>
+        </PeopleInfo>
       </CardBody>
     </StyledCard>
   );
@@ -41,4 +55,21 @@ const PeopleImage = styled.img`
   width: 100px;
   height: 100px;
   border-radius: 50%;
+`;
+
+const PeopleInfo = styled.div`
+  margin-top: 8px;
+  width: inherit;
+  display: flex;
+  align-items: center;
+`;
+
+const PeopleIcon = styled.a`
+  & > img {
+    width: 24px;
+    height: 24px;
+  }
+  .icon {
+    margin-left: 12px;
+  }
 `;

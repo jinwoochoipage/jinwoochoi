@@ -2,11 +2,12 @@ import { makeStyles } from "@material-ui/core";
 import styles from "styles/jss/nextjs-material-kit/pages/peoplePage.js";
 import Header from "components/Header/Header.js";
 import Parallax from "components/Parallax/Parallax.js";
-import GridContainer from "components/Grid/GridContainer.js";
+import GridContainer from "components/Grid/GridContainer";
 import GridItem from "components/Grid/GridItem.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
 import classNames from "classnames";
 import PeopleCard from "components/people/PeopleCard/PeopleCard";
+import styled from "styled-components";
 
 const peoples = [
   {
@@ -55,18 +56,22 @@ export default function PeoplePage() {
           color: "white",
         }}
       />
-      <Parallax filter responsive image="/img/main-bg.jpeg"></Parallax>
+      <Parallax filter responsive image="/img/main-bg.jpeg" />
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
-          <GridContainer>
+          <Container>
             {peoples.map((people) => (
-              <GridItem>
-                <PeopleCard people={people} />
-              </GridItem>
+              <PeopleCard people={people} />
             ))}
-          </GridContainer>
+          </Container>
         </div>
       </div>
     </>
   );
 }
+
+const Container = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+  grid-gap: 24px;
+`;
