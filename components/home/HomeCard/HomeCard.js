@@ -2,7 +2,6 @@ import { makeStyles } from "@material-ui/core/styles";
 // core components
 import Card from "components/Card/Card.js";
 import CardBody from "components/Card/CardBody.js";
-import Button from "components/CustomButtons/Button.js";
 import imagesStyles from "styles/jss/nextjs-material-kit/imagesStyles.js";
 
 import { cardTitle } from "styles/jss/nextjs-material-kit.js";

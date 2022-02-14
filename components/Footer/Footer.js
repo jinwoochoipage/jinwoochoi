@@ -6,9 +6,6 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import { makeStyles } from "@material-ui/core/styles";
 
-// @material-ui/icons
-import Favorite from "@material-ui/icons/Favorite";
-
 import styles from "styles/jss/nextjs-material-kit/components/footerStyle.js";
 import styled from "@emotion/styled";
 
@@ -49,7 +46,7 @@ export default function Footer(props) {
             </p>
           </Left>
         </div>
-        <div className={classes.right} style={{ fontSize: "12px" }}>
+        <div className={classes.right}>
           &copy; {1900 + new Date().getYear()} , made with{" "}
           <a
             href="https://www.creative-tim.com?ref=njsmk-footer"

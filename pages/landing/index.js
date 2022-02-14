@@ -4,12 +4,10 @@ import Header from "components/Header/Header.js";
 import Footer from "components/Footer/Footer.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
-import Button from "components/CustomButtons/Button.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
 import Parallax from "components/Parallax/Parallax.js";
 import HomeCard from "components/home/HomeCard/HomeCard.js";
 import styles from "styles/jss/nextjs-material-kit/pages/landingPage.js";
-import ProductSection from "pages-sections/LandingPage-Sections/ProductSection.js";
 import { makeStyles } from "@material-ui/core/styles";
 import styled from "@emotion/styled";
 
@@ -70,16 +68,20 @@ export default function LandingPage({ ...rest }) {
       </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
-          <HomeCardWrapper>
-            {histories.map((history, index) => (
-              <HomeCard
-                key={index}
-                title={history.title}
-                contents={history.contents}
-                style={{ width: "40rem" }}
-              />
-            ))}
-          </HomeCardWrapper>
+          <GridContainer>
+            <HomeCardWrapper>
+              {histories.map((history, index) => (
+                <GridItem>
+                  <HomeCard
+                    key={index}
+                    title={history.title}
+                    contents={history.contents}
+                    style={{ width: "40rem" }}
+                  />
+                </GridItem>
+              ))}
+            </HomeCardWrapper>
+          </GridContainer>
         </div>
       </div>
       <Footer />
