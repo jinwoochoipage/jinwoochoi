@@ -26,6 +26,7 @@ const peoplePageStyle = {
     zIndex: "3",
   },
   mainRaised: {
+    minHeight: "900px",
     margin: "-140px 30px 30px",
     paddingTop: "30px",
     paddingBottom: "30px",

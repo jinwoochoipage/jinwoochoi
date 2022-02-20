@@ -1,9 +1,7 @@
-import { makeStyles } from "@material-ui/core";
-import styles from "styles/jss/nextjs-material-kit/pages/peoplePage.js";
 import Parallax from "components/Parallax/Parallax.js";
-import classNames from "classnames";
 import PeopleCard from "components/people/PeopleCard/PeopleCard";
 import styled from "@emotion/styled";
+import MainContainer from "../../components/common/MainContainer";
 
 const peoples = [
   {
@@ -37,22 +35,17 @@ const peoples = [
 ];
 
 export default function PeoplePage() {
-  const useStyles = makeStyles(styles);
-  const classes = useStyles();
-
   return (
     <>
       <StyledParallax filter responsive image="/img/main-bg.jpeg" />
-      <div className={classNames(classes.main, classes.mainRaised)}>
-        <div className={classes.container}>
-          <PageTitle>People</PageTitle>
-          <Container>
-            {peoples.map((people, index) => (
-              <PeopleCard key={index} people={people} />
-            ))}
-          </Container>
-        </div>
-      </div>
+      <MainContainer>
+        <PageTitle>People</PageTitle>
+        <Container>
+          {peoples.map((people, index) => (
+            <PeopleCard key={index} people={people} />
+          ))}
+        </Container>
+      </MainContainer>
     </>
   );
 }
