@@ -1,8 +1,6 @@
 import { makeStyles } from "@material-ui/core";
 import styles from "styles/jss/nextjs-material-kit/pages/peoplePage.js";
-import Header from "components/Header/Header.js";
 import Parallax from "components/Parallax/Parallax.js";
-import HeaderLinks from "components/Header/HeaderLinks.js";
 import classNames from "classnames";
 import PeopleCard from "components/people/PeopleCard/PeopleCard";
 import styled from "styled-components";
@@ -65,5 +63,5 @@ const Container = styled.div`
 `;
 
 const StyledParallax = styled(Parallax)`
-  max-height: 300px;
+  height: 200px !important;
 `;

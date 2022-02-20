@@ -66,8 +66,8 @@ const PeopleInfo = styled.div`
 
 const PeopleIcon = styled.a`
   & > img {
-    width: 24px;
-    height: 24px;
+    width: 24px !important;
+    height: 24px !important;
   }
   .icon {
     margin-left: 12px;

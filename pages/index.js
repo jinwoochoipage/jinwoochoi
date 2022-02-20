@@ -1,18 +1,13 @@
 import React from "react";
 import classNames from "classnames";
-import Header from "components/Header/Header.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
-import HeaderLinks from "components/Header/HeaderLinks.js";
 import Parallax from "components/Parallax/Parallax.js";
 import HomeCard from "components/home/HomeCard/HomeCard.js";
 import styles from "styles/jss/nextjs-material-kit/pages/landingPage.js";
 import { makeStyles } from "@material-ui/core/styles";
 import styled from "@emotion/styled";
 
-const dashboardRoutes = [];
-
-// TODO: ts-doc 형태에 맞게 주석 추가(카드 추가하는 방법)
 const histories = [
   {
     title: "Jul. 2021: ",
@@ -35,12 +30,12 @@ const HomeCardWrapper = styled.div`
   padding-bottom: 20px;
 `;
 
-export default function LandingPage({ ...rest }) {
+export default function MainPage() {
   const useStyles = makeStyles(styles);
   const classes = useStyles();
   return (
     <div>
-      <Parallax filter responsive image="/img/main-bg.jpeg">
+      <StyledParallax filter responsive image="/img/main-bg.jpeg">
         <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
@@ -52,7 +47,7 @@ export default function LandingPage({ ...rest }) {
             </GridItem>
           </GridContainer>
         </div>
-      </Parallax>
+      </StyledParallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           <GridContainer>
@@ -74,3 +69,7 @@ export default function LandingPage({ ...rest }) {
     </div>
   );
 }
+
+const StyledParallax = styled(Parallax)`
+  height: 100px;
+`;
