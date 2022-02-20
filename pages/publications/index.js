@@ -104,6 +104,7 @@ export default function PublicationsPage() {
       <Container>
         <div className={classNames(classes.main, classes.mainRaised)}>
           <div className={classes.container}>
+            <PageTitle>Publications</PageTitle>
             {publications.map((publication, index) => (
               <PublicationCard key={index} publication={publication} />
             ))}
@@ -116,6 +117,12 @@ export default function PublicationsPage() {
 
 const StyledParallax = styled(Parallax)`
   height: 200px !important;
+`;
+
+const PageTitle = styled.h1`
+  font-size: 1.5625rem;
+  line-height: 1.4em;
+  color: #3b4858;
 `;
 
 const Container = styled.div`

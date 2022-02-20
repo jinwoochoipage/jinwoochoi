@@ -3,7 +3,7 @@ import styles from "styles/jss/nextjs-material-kit/pages/peoplePage.js";
 import Parallax from "components/Parallax/Parallax.js";
 import classNames from "classnames";
 import PeopleCard from "components/people/PeopleCard/PeopleCard";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 
 const peoples = [
   {
@@ -45,9 +45,10 @@ export default function PeoplePage() {
       <StyledParallax filter responsive image="/img/main-bg.jpeg" />
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
+          <PageTitle>People</PageTitle>
           <Container>
-            {peoples.map((people) => (
-              <PeopleCard people={people} />
+            {peoples.map((people, index) => (
+              <PeopleCard key={index} people={people} />
             ))}
           </Container>
         </div>
@@ -62,6 +63,12 @@ const Container = styled.div`
   grid-gap: 24px;
 `;
 
+const PageTitle = styled.h1`
+  font-size: 1.5625rem;
+  line-height: 1.4em;
+  color: #3b4858;
+`;
+
 const StyledParallax = styled(Parallax)`
-  height: 200px !important;
+  height: 300px !important;
 `;

@@ -2,7 +2,7 @@ import { container, title } from "styles/jss/nextjs-material-kit.js";
 
 const peoplePageStyle = {
   container: {
-    zIndex: "12",
+    zIndex: "0",
     color: "#FFFFFF",
     ...container,
   },

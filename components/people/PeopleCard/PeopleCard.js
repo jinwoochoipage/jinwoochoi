@@ -2,42 +2,45 @@ import { makeStyles } from "@material-ui/core/styles";
 // core components
 import Card from "components/Card/Card.js";
 import CardBody from "components/Card/CardBody.js";
-import imagesStyles from "styles/jss/nextjs-material-kit/imagesStyles.js";
-
 import { cardTitle } from "styles/jss/nextjs-material-kit.js";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 
 const styles = {
-  ...imagesStyles,
   cardTitle,
 };
 
-export default function PeopleCard({ people, ...rest }) {
+export default function PeopleCard({ people }) {
   const useStyles = makeStyles(styles);
   const classes = useStyles();
 
   return (
-    <StyledCard {...rest}>
+    <StyledCard>
       <CardBody>
         <h4 className={classes.cardTitle}>{people.name}</h4>
         <p>{people.role}</p>
         <PeopleImage src={people.image} />
         <PeopleInfo>
-          <PeopleIcon href={people?.homepage}>
-            <img src={require("../PeopleCard/img/homepage.svg")} />
-          </PeopleIcon>
-          <PeopleIcon href={`mailto:${people?.email}`}>
-            <img
-              className="icon"
-              src={require("../PeopleCard/img/email.svg")}
-            />
-          </PeopleIcon>
-          <PeopleIcon href={people?.github}>
-            <img
-              className="icon"
-              src={require("../PeopleCard/img/github.svg")}
-            />
-          </PeopleIcon>
+          {people.homepage && (
+            <PeopleIcon href={people?.homepage}>
+              <img src={require("../PeopleCard/img/homepage.svg")} />
+            </PeopleIcon>
+          )}
+          {people.email && (
+            <PeopleIcon href={`mailto:${people?.email}`}>
+              <img
+                className="icon"
+                src={require("../PeopleCard/img/email.svg")}
+              />
+            </PeopleIcon>
+          )}
+          {people.github && (
+            <PeopleIcon href={people?.github}>
+              <img
+                className="icon"
+                src={require("../PeopleCard/img/github.svg")}
+              />
+            </PeopleIcon>
+          )}
         </PeopleInfo>
       </CardBody>
     </StyledCard>
@@ -66,10 +69,10 @@ const PeopleInfo = styled.div`
 
 const PeopleIcon = styled.a`
   & > img {
-    width: 24px !important;
-    height: 24px !important;
+    width: 24px;
+    height: 24px;
   }
-  .icon {
+  :not(:first-child) {
     margin-left: 12px;
   }
 `;
