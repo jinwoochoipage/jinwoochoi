@@ -9,7 +9,7 @@ import PageChange from "components/PageChange/PageChange.js";
 import "styles/scss/nextjs-material-kit.scss?v=1.2.0";
 import Header from "../components/Header/Header";
 import HeaderLinks from "../components/Header/HeaderLinks";
-import Parallax from "../components/Parallax/Parallax";
+import Footer from "components/Footer/Footer.js";
 
 Router.events.on("routeChangeStart", (url) => {
   console.log(`Loading: ${url}`);
@@ -27,8 +27,6 @@ Router.events.on("routeChangeError", () => {
   ReactDOM.unmountComponentAtNode(document.getElementById("page-transition"));
   document.body.classList.remove("body-page-transition");
 });
-
-const dashboardRoutes = [];
 
 export default class MyApp extends App {
   static async getInitialProps({ Component, router, ctx }) {
@@ -49,9 +47,20 @@ export default class MyApp extends App {
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
-          <title>NextJS Material Kit by Creative Tim</title>
+          <title>Vision and Learning Lab</title>
         </Head>
+        <Header
+          color="transparent"
+          brand="Vision and Learing Lab"
+          rightLinks={<HeaderLinks />}
+          fixed
+          changeColorOnScroll={{
+            height: 400,
+            color: "white",
+          }}
+        />
         <Component {...pageProps} />
+        <Footer />
       </React.Fragment>
     );
   }

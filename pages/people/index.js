@@ -2,8 +2,6 @@ import { makeStyles } from "@material-ui/core";
 import styles from "styles/jss/nextjs-material-kit/pages/peoplePage.js";
 import Header from "components/Header/Header.js";
 import Parallax from "components/Parallax/Parallax.js";
-import GridContainer from "components/Grid/GridContainer";
-import GridItem from "components/Grid/GridItem.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
 import classNames from "classnames";
 import PeopleCard from "components/people/PeopleCard/PeopleCard";
@@ -46,17 +44,7 @@ export default function PeoplePage() {
 
   return (
     <>
-      <Header
-        color="transparent"
-        brand="Vision and Learing Lab"
-        rightLinks={<HeaderLinks />}
-        fixed
-        changeColorOnScroll={{
-          height: 400,
-          color: "white",
-        }}
-      />
-      <Parallax filter responsive image="/img/main-bg.jpeg" />
+      <StyledParallax filter responsive image="/img/main-bg.jpeg" />
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           <Container>
@@ -74,4 +62,8 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, auto));
   grid-gap: 24px;
+`;
+
+const StyledParallax = styled(Parallax)`
+  max-height: 300px;
 `;
