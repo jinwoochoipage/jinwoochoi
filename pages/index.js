@@ -1,7 +1,6 @@
 import React from "react";
 import classNames from "classnames";
 import Header from "components/Header/Header.js";
-import Footer from "components/Footer/Footer.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
@@ -41,18 +40,6 @@ export default function LandingPage({ ...rest }) {
   const classes = useStyles();
   return (
     <div>
-      <Header
-        color="transparent"
-        routes={dashboardRoutes}
-        brand="Vision and Learing Lab"
-        rightLinks={<HeaderLinks />}
-        fixed
-        changeColorOnScroll={{
-          height: 400,
-          color: "white",
-        }}
-        {...rest}
-      />
       <Parallax filter responsive image="/img/main-bg.jpeg">
         <div className={classes.container}>
           <GridContainer>
