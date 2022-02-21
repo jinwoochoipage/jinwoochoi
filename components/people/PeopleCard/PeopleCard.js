@@ -18,7 +18,7 @@ export default function PeopleCard({ people }) {
       <CardBody>
         <h4 className={classes.cardTitle}>{people.name}</h4>
         <p>{people.role}</p>
-        <PeopleImage src={people.image} />
+        {people.image && <PeopleImage src={people.image} />}
         <PeopleInfo>
           {people.homepage && (
             <PeopleIcon href={people?.homepage}>

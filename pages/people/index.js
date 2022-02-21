@@ -2,12 +2,13 @@ import Parallax from "components/Parallax/Parallax.js";
 import PeopleCard from "components/people/PeopleCard/PeopleCard";
 import styled from "@emotion/styled";
 import MainContainer from "../../components/common/MainContainer";
+import { Jinwoo } from "../../public/img/people";
 
 const peoples = [
   {
     name: "Jinwoo Choi",
     role: "Professor",
-    image: "",
+    image: Jinwoo,
     email: "jinwoochoi@khu.ac.kr",
     homepage: "https://sites.google.com/site/jchoivision",
     github: "https://github.com/jinwchoi",
@@ -15,22 +16,18 @@ const peoples = [
   {
     name: "Dongho Lee",
     role: "M.S. Student",
-    image: "",
   },
   {
     name: "Jongmin Shin",
     role: "M.S. Student",
-    image: "",
   },
   {
     name: "Gyeongho Bae",
     role: "Undergraduate Intern",
-    image: "",
   },
   {
     name: "Hyogun Lee",
     role: "Undergraduate Intern",
-    image: "",
   },
 ];
 
